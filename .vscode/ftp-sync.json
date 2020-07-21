@@ -1,0 +1,27 @@
+{
+    "remotePath": "./nodecamstream",
+    "host": "172.20.4.195",
+    "username": "nodeproject",
+    "password": "jJKT6eF8p9aS",
+    "port": 21,
+    "secure": false,
+    "protocol": "ftp",
+    "uploadOnSave": false,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store",
+        "node_modules",
+        "\\.eslintrc.js",
+        "\\.gitignore"
+    ],
+    "generatedFiles": {
+        "uploadOnSave": false,
+        "extensionsToInclude": [],
+        "path": ""
+    }
+}

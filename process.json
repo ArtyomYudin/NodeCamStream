@@ -1,0 +1,21 @@
+{
+  "apps": [{
+      "name"       : "NodeCamStream",
+      "cwd"        : "/usr/local/node/nodecamstream/",
+      "script"     : "./index.js",
+      "exec_mode"  : "fork", 
+      "combine_logs": true,
+      "merge_logs" : true,
+      "error_file" : "/var/log/nodecamstream-err.log",
+      "out_file"   : "/var/log/nodecamstream-out.log",
+      "pid_file"   : "/var/run/nodecamstream.pid",
+      "log_date_format" : "MMM DD HH:mm:ss",
+	"watch"      : false,
+      "env": {
+        "NODE_ENV": "development"
+    } ,
+      "env_production" : {
+        "NODE_ENV": "production",
+    }
+  }]
+}

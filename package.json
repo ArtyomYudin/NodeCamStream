@@ -10,11 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-rtsp-stream": "~0.0.5"
+    "node-rtsp-stream": "0.0.9"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ArtyomYudin/NodeSKUD.git"
+    "url": "https://github.com/ArtyomYudin/NodeCamStream.git"
   },
   "devDependencies": {
     "eslint": "^7.5.0",

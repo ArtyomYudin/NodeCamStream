@@ -15,6 +15,7 @@
         }
     },
     "rules": {
+        "linebreak-style": ["error", "unix"],
         "max-len": [2, 160],
         "accessor-pairs": 0,
         "no-console": 0,

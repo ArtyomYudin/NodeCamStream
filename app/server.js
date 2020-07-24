@@ -2,7 +2,7 @@ const Stream = require('node-rtsp-stream');
 
 const streamUrl = 'rtsp://video:123456@172.20.58.23:7070';
 const streamUrl1 = 'rtsp://video:123456@172.20.58.24:7070';
-const streamUrl2 = 'rtsp://video:123456@172.20.58.27:7070';
+const streamUrl2 = 'rtsp://video:123456@172.20.58.28:7070';
 
 const stream = new Stream({
   name: 'ACTi_stream',
@@ -32,7 +32,7 @@ const stream1 = new Stream({
   // width: 640,
   // height: 480,
   ffmpegOptions: {
-    // '-stats': '', // an option with no neccessary value uses a blank string
+    // '-stats': '', // an option with no neccessary value uses a blank string.
     '-f': 'mpegts',
     '-codec:v': 'mpeg1video',
     '-r': '25',
@@ -52,7 +52,7 @@ const stream2 = new Stream({
   // width: 640,
   // height: 480,
   ffmpegOptions: {
-    // '-stats': '', // an option with no neccessary value uses a blank string
+    // '-stats': '', // an option with no neccessary value uses a blank string.
     '-f': 'mpegts',
     '-codec:v': 'mpeg1video',
     '-r': '25',

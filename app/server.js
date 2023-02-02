@@ -7,6 +7,7 @@ const Stream = require('./videoStream');
 const streamUrl = 'rtsp://video:123456@172.20.58.23:7070';
 const streamUrl1 = 'rtsp://video:123456@172.20.58.24:7070';
 const streamUrl2 = 'rtsp://video:123456@172.20.58.28:7070';
+const streamUrl3 = 'rtsp://video:123456@172.20.58.29:7070';
 
 const options = {
   key: fs.readFileSync('./cert/center_inform.key'),
@@ -24,6 +25,15 @@ const httpsServerMainCam = https
     }
   })
   .listen('9999', 'it.center-inform.ru', () => {});
+
+const httpsServerBackCam = https
+  .createServer(options, (request, response) => {
+    if (request.method === 'OPTIONS') {
+      // response.writeHead(204, headers);
+      response.end();
+    }
+  })
+  .listen('9996', 'it.center-inform.ru', () => {});
 
 const httpsServerServerRoom1 = https
   .createServer(options, (request, response) => {
@@ -90,6 +100,27 @@ const stream2 = new Stream({
   wsHost: 'it.center-inform.ru',
   wsServer: httpsServerServerRoom2,
   // wsPort: 9998,
+  ffmpegOptions: {
+    // '-stats': '', // an option with no neccessary value uses a blank string.
+    '-f': 'mpegts',
+    '-codec:v': 'mpeg1video',
+    '-r': '25',
+    // '-threads': '1',
+    '-v': 'error',
+    '-s': '640x480',
+    '-b:v': '1000k',
+    '-bf': '0',
+  },
+});
+
+const stream3 = new Stream({
+  name: 'ACTi_stream_back',
+  streamUrl: streamUrl3,
+  wsHost: 'it.center-inform.ru',
+  wsServer: httpsServerBackCam,
+  // wsPort: 9996,
+  // width: 640,
+  // height: 480,
   ffmpegOptions: {
     // '-stats': '', // an option with no neccessary value uses a blank string.
     '-f': 'mpegts',
